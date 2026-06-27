@@ -1,0 +1,17 @@
+Evaluation Report for Logistic Regression
+========================================
+Accuracy: 0.8525
+Precision: 0.8065
+Recall: 0.8929
+F1: 0.8475
+Roc_auc: 0.9437
+
+Classification Report:
+              precision    recall  f1-score   support
+
+  No Disease       0.90      0.82      0.86        33
+     Disease       0.81      0.89      0.85        28
+
+    accuracy                           0.85        61
+   macro avg       0.85      0.86      0.85        61
+weighted avg       0.86      0.85      0.85        61

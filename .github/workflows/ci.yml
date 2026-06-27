@@ -1,0 +1,38 @@
+name: Heart Disease AI CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v4
+      with:
+        python-style: '3.12'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Preprocess Raw Data
+      run: |
+        # Download and preprocess raw data before running tests
+        python fetch_data.py
+        python -m src.preprocessing
+        
+    - name: Train Models
+      run: |
+        # Train and save the best model
+        python -m src.train
+        
+    - name: Run Tests with pytest
+      run: |
+        pytest tests/
