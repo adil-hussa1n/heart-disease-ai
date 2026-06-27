@@ -1,5 +1,7 @@
 # CardioAI: End-to-End Heart Disease Prediction & Explainer System
 
+🚀 **Live Interactive Dashboard:** [https://heart-disease-ai-production.up.railway.app](https://heart-disease-ai-production.up.railway.app)
+
 CardioAI is a production-ready machine learning system designed to predict coronary heart disease risk. By analyzing patient clinical attributes, it evaluates risk probability and provides explainable AI insights using SHAP. The system features a modular Python ML pipeline, a FastAPI REST service, and an interactive Streamlit diagnostic dashboard.
 
 > [!IMPORTANT]
