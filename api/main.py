@@ -4,6 +4,7 @@ import sqlite3
 import logging
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field, field_validator
 import pandas as pd
 
@@ -146,6 +147,10 @@ class BatchPredictionRequest(BaseModel):
     patients: List[PatientFeatures]
 
 # API Endpoints
+@app.get("/")
+def index():
+    return RedirectResponse(url="/docs")
+
 @app.get("/health")
 def health_check():
     """Health check endpoint."""
